@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Мини-крафт: песочница блоков</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="brand">
+        <span class="brand__logo">🧱</span>
+        <div>
+          <h1>Мини-крафт</h1>
+          <p>Кликайте по клеткам, чтобы ставить или убирать блоки.</p>
+        </div>
+      </div>
+      <div class="controls">
+        <label>
+          Тип блока
+          <select id="blockType">
+            <option value="grass">Трава</option>
+            <option value="dirt">Земля</option>
+            <option value="stone">Камень</option>
+            <option value="water">Вода</option>
+            <option value="wood">Дерево</option>
+          </select>
+        </label>
+        <label>
+          Размер карты
+          <input id="gridSize" type="range" min="8" max="24" value="14" />
+        </label>
+        <button id="reset">Сбросить мир</button>
+        <button id="save">Сохранить</button>
+        <button id="load">Загрузить</button>
+      </div>
+    </header>
+
+    <main class="playfield">
+      <section class="hud">
+        <div>
+          <h2>Подсказки</h2>
+          <ul>
+            <li>ЛКМ — поставить выбранный блок.</li>
+            <li>ПКМ — убрать блок.</li>
+            <li>Наведите курсор, чтобы увидеть подсветку.</li>
+          </ul>
+        </div>
+        <div class="legend">
+          <h2>Легенда</h2>
+          <div class="legend__grid">
+            <span class="legend__tile grass"></span>Трава
+            <span class="legend__tile dirt"></span>Земля
+            <span class="legend__tile stone"></span>Камень
+            <span class="legend__tile water"></span>Вода
+            <span class="legend__tile wood"></span>Дерево
+            <span class="legend__tile empty"></span>Пусто
+          </div>
+        </div>
+      </section>
+      <section class="board-wrapper">
+        <canvas id="board" width="560" height="560" aria-label="Игровое поле"></canvas>
+        <div class="status" id="status">Готово к стройке!</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Мини-крафт — простая песочница блоков. Постройте свой мир!
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

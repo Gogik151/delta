@@ -1,0 +1,196 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f4f6fb;
+  color: #1f2a44;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at top, #fefefe 0%, #e6edf7 55%, #dbe5f5 100%);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(31, 42, 68, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.brand {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.brand__logo {
+  font-size: 2.25rem;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.brand p {
+  margin: 0.25rem 0 0;
+  color: #4c5f83;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #4c5f83;
+  gap: 0.25rem;
+}
+
+.controls select,
+.controls input[type="range"],
+.controls button {
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cdd7ea;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.controls button {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controls button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(31, 42, 68, 0.15);
+}
+
+.playfield {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  flex: 1;
+}
+
+.hud {
+  background: #ffffffcc;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(31, 42, 68, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hud h2 {
+  margin: 0 0 0.5rem;
+}
+
+.hud ul {
+  padding-left: 1.1rem;
+  margin: 0;
+  color: #4c5f83;
+}
+
+.legend__grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.legend__tile {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(31, 42, 68, 0.15);
+  display: inline-block;
+}
+
+.board-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#board {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius: 1rem;
+  background: #f5f8ff;
+  border: 2px solid #cdd7ea;
+  box-shadow: 0 25px 60px rgba(31, 42, 68, 0.18);
+  cursor: crosshair;
+  display: block;
+}
+
+.status {
+  background: #ffffffcc;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #2c3e62;
+}
+
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: #4c5f83;
+}
+
+.grass {
+  background: linear-gradient(135deg, #79d35b, #4cb843);
+}
+
+.dirt {
+  background: linear-gradient(135deg, #c98f5f, #a36a3a);
+}
+
+.stone {
+  background: linear-gradient(135deg, #bfc6d8, #8d97ad);
+}
+
+.water {
+  background: linear-gradient(135deg, #5bc5ff, #3a7dd6);
+}
+
+.wood {
+  background: linear-gradient(135deg, #d8a86a, #b47941);
+}
+
+.empty {
+  background: #f5f8ff;
+  border: 1px dashed #cdd7ea;
+}
+
+@media (max-width: 900px) {
+  .playfield {
+    grid-template-columns: 1fr;
+  }
+}
